@@ -1,10 +1,11 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 {
   config.fp-rndp-lib.nixosConfigurations = {
     test = {
       nixpkgs = inputs.nixpkgs-stable;
-      hmInput = inputs.home-manager-stable;
-      home-manager.shawn = { };
+      home-manager.shawn = {
+        input = inputs.home-manager-stable;
+      };
     };
   };
 }
